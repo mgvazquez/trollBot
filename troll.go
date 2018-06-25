@@ -34,6 +34,8 @@ func _main(args []string) int {
 	rtm := api.NewRTM()
 	go rtm.ManageConnection()
 
+	//TODO: Agregar un Handler que mande mensajes cuando el channel al que esta suscripto este muy calmado
+
 	Loop:
 	for {
 		select {

@@ -9,7 +9,7 @@ import (
 
 func randomResponse(rtas ...string) (string)  {
 	rand.Seed(time.Now().Unix())
-	return rtas[rand.Intn(len(rtas))]
+	return ""+rtas[rand.Intn(len(rtas))]+""
 }
 
 func stringMatch(msg string, subs ...string) (bool){
@@ -27,7 +27,7 @@ func listenAndRespond(rtm *slack.RTM, msg *slack.MessageEvent) {
 	botID := &rtm.GetInfo().User.ID
 	//usrID := &msg.User
 
-	//TODO: La idea es agrgar aca otros handlers para aceptar comandos directos nombrando al bot
+	//TODO: La idea es agregar aca otros handlers para aceptar comandos directos nombrando al bot
 
 	if !stringMatch(msg.User, *botID, "USLACKBOT") {
 		go edgewise(rtm,msg)

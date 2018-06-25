@@ -20,7 +20,9 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent){
 		//rta = "hola mi miguissss " + "<@" + msg.User + ">!!!"
 
 	case stringMatch(msg.Text, "poc", "p.o.c."):
-		rta = "Ayuda, soy una poc y estoy atrapada en produccion, saquenme de aca!"
+		rta = randomResponse(
+			"Ayuda, soy una poc y estoy atrapada en produccion, saquenme de aca!",
+			":musical_note: Loh' atamo' con alambre, lo' atamoh' :musical_note:")
 
 	case stringMatch(msg.Text, "amo al bot", "te amo bot"):
 		rta = "Gracias sonsito :heart::kiss:"
@@ -31,7 +33,10 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent){
 			"Racatate ameoh' " + "<@" + msg.User + ">")
 
 	case stringMatch(msg.Text, "lucho", "licha", "lacha", "licho"):
-		rta = ":licha: :heart: :lucho:"
+		rta = randomResponse(
+			":licha: :heart: :lucho:",
+			":licha: :heart: :licha:",
+			":licha: :heart: :manu:")
 
 	case stringMatch(msg.Text, "magia", "magic"):
 		rta = "https://media.tenor.co/images/5fb8e3d4c56cdf53fb15356f8fd4987e/raw"
@@ -61,12 +66,18 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent){
 			"https://pbs.twimg.com/media/CoVk24zWEAEtC4B.jpg",
 			"http://imgur.com/5LizKB8",
 			"http://gsferreira.com/images/reduce-the-path-length-of-your-node-js-project-dependencies-dependencies-everywhere.jpg")
-
 	}
 
 	if rta != "" {
 		log.Printf("[DEBUG] theBotSay: %v\n", rta)
 		rtm.SendMessage(rtm.NewOutgoingMessage(rta, msg.Channel))
+
+		//params := slack.NewPostMessageParameters()
+		//params.Username = "BOT(on)"
+		//params.IconURL = "https://ca.slack-edge.com/T0RSWNW0G-UB6879ADB-54badd32d58a-48"
+		//params.Attachments = append(params.Attachments, slack.Attachment{ImageURL:"https://i.imgur.com/5LizKB8.png"})
+		//rtm.PostMessage(msg.Channel, "", params)
+
 	}
 
 }
