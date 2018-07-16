@@ -34,6 +34,7 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent){
 
 	case stringMatch(msg.Text, "lucho", "licha", "lacha", "licho"):
 		rta = randomResponse(
+			":licha: :heart: :kuaker:",
 			":licha: :heart: :lucho:",
 			":licha: :heart: :licha:",
 			":licha: :heart: :manu:")
