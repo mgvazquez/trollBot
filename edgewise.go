@@ -5,7 +5,7 @@ import (
 	"log"
 )
 
-func edgewise(rtm *slack.RTM, msg *slack.MessageEvent){
+func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 	var (
 		rta string = ""
 	)
@@ -29,8 +29,8 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent){
 
 	case stringMatch(msg.Text, "gil"):
 		rta = randomResponse(
-			"Eh voh' que agitas!!! " + "<@" + msg.User + ">",
-			"Racatate ameoh' " + "<@" + msg.User + ">")
+			"Eh voh' que agitas!!! "+"<@"+msg.User+">",
+			"Racatate ameoh' "+"<@"+msg.User+">")
 
 	case stringMatch(msg.Text, "lucho", "licha", "lacha", "licho"):
 		rta = randomResponse(
@@ -67,7 +67,11 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent){
 			"https://pbs.twimg.com/media/CoVk24zWEAEtC4B.jpg",
 			"http://imgur.com/5LizKB8",
 			"http://gsferreira.com/images/reduce-the-path-length-of-your-node-js-project-dependencies-dependencies-everywhere.jpg")
-	}
+
+	case stringMatch(msg.Text, "ojo", "ojito", "willy"):
+		rta = "Big Brother is Watching You\nhttps://i.imgur.com/5KASKiY.png"
+
+}
 
 	if rta != "" {
 		log.Printf("[DEBUG] theBotSay: %v\n", rta)
