@@ -88,7 +88,7 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		match = true
 
 	case stringMatch(msg.Text, "ojo", "ojito", "willy"):
-		rta = "Big Brother is Watching You"
+		rta = "*Big Brother is Watching You.*"
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL:"https://i.imgur.com/5KASKiY.png"})
 		match = true
 
