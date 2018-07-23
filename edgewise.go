@@ -56,6 +56,7 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		match = true
 
 	case stringMatch(msg.Text, "magia", "magic"):
+		rta = "<@" + msg.User + ">, " + "deja de tirar tanta magia!"
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL:"https://media.tenor.co/images/5fb8e3d4c56cdf53fb15356f8fd4987e/raw"})
 		match = true
 
