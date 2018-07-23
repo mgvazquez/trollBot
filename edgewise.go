@@ -6,6 +6,7 @@ import (
 )
 
 func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
+
 	var (
 		rta string = ""
 		params = slack.NewPostMessageParameters()
@@ -13,10 +14,11 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 	)
 
 	BotName := &rtm.GetInfo().User.Name
-	params.AsUser = true
+	params.EscapeText = false
 	params.User = *BotName
 	params.Username = "BOT(on)"
 	params.AsUser = true
+	params.Markdown = true
 	params.IconURL = "https://ca.slack-edge.com/T0RSWNW0G-UB6879ADB-54badd32d58a-48"
 
 	switch {
@@ -26,9 +28,8 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		match = true
 
 	case stringMatch(msg.Text, "hola", "holis", "hello"):
-		rta = "Holisss mi miguissss" + "<@" + msg.User + ">!!!"
+		rta = "Holisss mi miguissss " + "<@" + msg.User + ">!!!"
 		match = true
-		//rta = "hola mi miguissss " + "<@" + msg.User + ">!!!"
 
 	case stringMatch(msg.Text, "poc", "p.o.c."):
 		rta = randomResponse(
