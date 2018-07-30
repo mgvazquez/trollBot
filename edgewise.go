@@ -9,6 +9,7 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 
 	var (
 		rta string = ""
+		img string = ""
 		params = slack.NewPostMessageParameters()
 		match = false
 	)
@@ -67,7 +68,7 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 			"Head of chota, cat")
 		match = true
 
-	case stringMatch(msg.Text, "milanga", "milanesca"):
+	case stringMatch(msg.Text, "milanga", "milanesa"):
 		rta = randomResponse(
 			"No sabía",
 			"No sabía nada",
@@ -80,13 +81,20 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 			"Sí, no sé")
 		match = true
 
-	case stringMatch(msg.Text, "node", "angular", "javascript", "js"):
+	case stringMatch(msg.Text, "proxy"):
 		rta = randomResponse(
+			"Nah Nah Nah"+" <@"+msg.User+">, " + "otro proxy más?!?!",
+			":kuaker:, alguien dijo PROXY?!?! :trollface:")
+		match = true
+
+	case stringMatch(msg.Text, "node", "angular", "javascript", "js"):
+		img = randomResponse(
 			"https://media.makeameme.org/created/javascript-sgfi8v.jpg",
 			"https://img.devrant.io/devrant/rant/r_608411_Wd4s9.jpg",
 			"https://pbs.twimg.com/media/CoVk24zWEAEtC4B.jpg",
-			"http://imgur.com/5LizKB8",
+			"https://i.imgur.com/5LizKB8.png",
 			"http://gsferreira.com/images/reduce-the-path-length-of-your-node-js-project-dependencies-dependencies-everywhere.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL:img})
 		match = true
 
 	case stringMatch(msg.Text, "ojo", "ojito", "willy"):
@@ -97,7 +105,7 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 	}
 
 	if match {
-		log.Printf("[DEBUG] theBotSay: %v\n", rta)
+		log.Printf("[DEBUG] theBotSay: %v - %v\n", rta, img)
 		//rtm.SendMessage(rtm.NewOutgoingMessage(rta, msg.Channel))
 		rtm.PostMessage(msg.Channel, rta, params)
 	}
