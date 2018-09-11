@@ -12,15 +12,19 @@ func randomResponse(rtas ...string) (string)  {
 	return ""+rtas[rand.Intn(len(rtas))]+""
 }
 
-func stringMatch(msg string, subs ...string) (bool){
-	_match := false
+//func stringMatch(msg string, subs ...string) (Match bool, String string){
+func stringMatch(msg string, subs ...string) (Match bool){
+	//Match := false
+	//String := ""
 	for _, sub := range subs {
 		if strings.Contains(strings.ToLower(msg), strings.ToLower(sub)) {
-			_match = true
+			Match = true
+			//String = sub
 			break
 		}
 	}
-	return _match
+	//return Match, String
+	return Match
 }
 
 func listenAndRespond(rtm *slack.RTM, msg *slack.MessageEvent) {
