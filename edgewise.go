@@ -95,6 +95,12 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
 		match = true
 
+	case stringMatch(msg.Text, "lino"):
+		img = randomResponse(
+			"https://imgflip.com/i/2w167o")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
 	case stringMatch(msg.Text, "css", "style-sheet"):
 		img = randomResponse(
 			"https://i.imgur.com/Q3cUg29.gif",
