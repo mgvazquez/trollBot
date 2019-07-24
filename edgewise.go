@@ -102,7 +102,7 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		match = true
 
 	case stringMatch(msg.Text, "ivan"):
-		img = randomResponse(
+		rta = randomResponse(
 			":quicuza: Que cùza?!?",
 			":quicuza:",
 			":quicuza:"+" <@"+msg.User+">, "+"que cùza?!?")
