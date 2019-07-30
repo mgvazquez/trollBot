@@ -108,19 +108,25 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 			":quicuza:"+" <@"+msg.User+">, "+"que cùza?!?")
 		match = true
 
-	case stringMatch(msg.Text, "alan", "lamer", "lengua"):
+	case stringMatch(msg.Text, "alan", "lamer", "lengua", "bach"):
 		img = randomResponse("https://i.imgflip.com/36uycu.jpg")
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
 		match = true
 
-	case stringMatch(msg.Text, "coca", "cambios", "ptp"):
+	case stringMatch(msg.Text, "coca", "cambios", "ptp", "mentos"):
 		img = randomResponse("https://i.imgflip.com/36uyef.jpg")
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
 		match = true
 
-	case stringMatch(msg.Text, "bitcoins", "crypto", "bitcoin", "ethereum"):
-		img = randomResponse("https://i.imgflip.com/36uymy.jpg",
+	case stringMatch(msg.Text, "juani", "cheto", "kansas", "sushi"):
+		img = randomResponse("https://imgflip.com/i/36uyuw",
 			"https://i.imgflip.com/36uyuw.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+	case stringMatch(msg.Text, "marce", "bitcoin", "crypto"):
+		img = randomResponse("https://imgflip.com/i/36uymy",
+			"https://imgflip.com/i/36uymy")
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
 		match = true
 
@@ -181,6 +187,18 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		rta = "*Big Brother is Watching You.*"
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: "https://i.imgur.com/5KASKiY.png"})
 		match = true
+
+
+	case stringMatch(msg.Text, "almirante", "braun", "minipimer", "brown"):
+		img = randomResponse("https://imgflip.com/i/36v96o")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+	case stringMatch(msg.Text, "juegue", "jueguee", "juegueeee", "jj"):
+		img = randomResponse("https://gph.is/g/Z21YbQb")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
 
 	}
 
