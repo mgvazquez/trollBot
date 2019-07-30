@@ -108,8 +108,29 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 			":quicuza:"+" <@"+msg.User+">, "+"que cùza?!?")
 		match = true
 
+	case stringMatch(msg.Text, "alan", "lamer", "lengua"):
+		img = randomResponse("https://i.imgflip.com/36uycu.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+	case stringMatch(msg.Text, "coca", "cambios", "ptp"):
+		img = randomResponse("https://i.imgflip.com/36uyef.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+	case stringMatch(msg.Text, "bitcoins", "crypto", "bitcoin", "ethereum"):
+		img = randomResponse("https://i.imgflip.com/36uymy.jpg",
+			"https://i.imgflip.com/36uyuw.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
 	case stringMatch(msg.Text, "franchute", "frances"):
 		img = randomResponse("https://i.imgflip.com/36epmk.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+	case stringMatch(msg.Text, "negro", "kevin", "brian", "jenny", "kirchner", "cfk", "cristina", "cristi", "feminazi", "todes"):
+		img = randomResponse("https://i.imgflip.com/36uz6w.jpg")
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
 		match = true
 
