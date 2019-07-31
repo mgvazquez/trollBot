@@ -228,7 +228,7 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 	case stringMatch(msg.Text, "corvetto"):
 		img = randomResponse("https://i.imgflip.com/36xiin.jpg", "https://i.imgflip.com/36xijv.jpg")
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
-		match = truerima
+		match = true
 
 	case stringMatch(msg.Text, "rima no anda"):
 		img = randomResponse("https://cdn.memegenerator.es/imagenes/memes/full/29/60/29604004.jpg", "https://i.imgflip.com/36xj39.jpg", "https://viapais.cdncimeco.com/media/cache/resolve/medium/https://viapais.com.ar/files/2018/08/20180815121424_33926253_0_body.jpg")
@@ -262,8 +262,13 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
 		match = true
 
-	case stringMatch(msg.Text, "comercial", "titi", "cuchi"):
-		img = randomResponse("https://i.imgflip.com/36xnmd.jpg", "https://i.imgflip.com/36xnox.jpg", "minion")
+	case stringMatch(msg.Text, "comercial", "titi", "cuchi", "minion"):
+		img = randomResponse("https://i.imgflip.com/36xnmd.jpg", "https://i.imgflip.com/36xnox.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+	case stringMatch(msg.Text, "tomy", "tommy", "zucca", "regalo"):
+		img = randomResponse("https://i.imgflip.com/36xpl6.jpg", "https://i.imgflip.com/36xpnd.jpg", "https://i.imgflip.com/36xpos.jpg")
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
 		match = true
 	}
