@@ -200,7 +200,47 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		match = true
 
 
+	case stringMatch(msg.Text, "simon", "stellaccio", "sstesting"):
+		img = randomResponse("https://i.imgflip.com/36xhf4.jpg", "https://i.imgflip.com/36xini.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+
+	case stringMatch(msg.Text, "boris", "gaston", "figini", "i&d"):
+		img = randomResponse("https://i.imgflip.com/36xhiz.jpg", "https://i.imgflip.com/36xhnh.jpg", "https://i.imgflip.com/36xi4x.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+
+	case stringMatch(msg.Text, "mamut", "bufalo", "blanco", "mati", "eric", "peso", "cormillot", "dieta"):
+		img = randomResponse("https://i.imgflip.com/36xht8.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+
+	case stringMatch(msg.Text, "nanette", "colorada", "prensa"):
+		img = randomResponse("https://i.imgflip.com/36xhyl.jpg", "https://i.imgflip.com/36xi1a.jpg", "https://i.imgflip.com/36xib4.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+
+	case stringMatch(msg.Text, "corvetto"):
+		img = randomResponse("https://i.imgflip.com/36xiin.jpg", "https://i.imgflip.com/36xijv.jpg", "https://i.imgflip.com/36xib4.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+	case stringMatch(msg.Text, "rima no anda"):
+		img = randomResponse("https://cdn.memegenerator.es/imagenes/memes/full/29/60/29604004.jpg", "https://i.imgflip.com/36xj39.jpg", "https://viapais.cdncimeco.com/media/cache/resolve/medium/https://viapais.com.ar/files/2018/08/20180815121424_33926253_0_body.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+	case stringMatch(msg.Text, "topo"):
+		img = randomResponse("https://i.imgflip.com/36xj7t.jpg", "http://www.buenamusica.com/media/fotos/cantantes/biografia/topo-gigio.jpg", "https://i.imgflip.com/36xjes.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
 	}
+
+
 
 	if match {
 		log.Printf("[DEBUG] theBotSay: %v - %v\n", rta, img)
