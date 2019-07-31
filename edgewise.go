@@ -42,6 +42,7 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		rta = "Gracias sonsito :heart::kiss:"
 		match = true
 
+
 	case stringMatch(msg.Text, "gil"):
 		rta = randomResponse(
 			"Eh voh' que agitas!!! "+"<@"+msg.User+">",
@@ -51,7 +52,7 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 	case stringMatch(msg.Text, "lucho", "licha", "lacha", "licho"):
 		rta = randomResponse(
 			":licha: :heart: :kuaker:",
-			":licha: :heart: :lucho:",
+			":licha: :heart: :vaca:",
 			":licha: :heart: :licha:",
 			":licha: :heart: :manu:")
 		match = true
@@ -190,7 +191,7 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 
 
 	case stringMatch(msg.Text, "almirante", "braun", "minipimer", "brown"):
-		img = randomResponse("https://i.imgflip.com/36vffw.jpg")
+		img = randomResponse("https://i.imgflip.com/36vffw.jpg", "https://i.imgflip.com/36xmpd.jpg", "https://i.imgflip.com/36xmsp.jpg")
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
 		match = true
 
@@ -200,13 +201,13 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		match = true
 
 
-	case stringMatch(msg.Text, "simon", "stellaccio", "sstesting"):
-		img = randomResponse("https://i.imgflip.com/36xhf4.jpg", "https://i.imgflip.com/36xini.jpg")
+	case stringMatch(msg.Text, "simon", "stellaccio", "testing"):
+		img = randomResponse("https://i.imgflip.com/36xhf4.jpg", "https://i.imgflip.com/36xini.jpg", "https://i.imgflip.com/36xna2.jpg")
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
 		match = true
 
 
-	case stringMatch(msg.Text, "boris", "gaston", "figini", "i&d"):
+	case stringMatch(msg.Text, "boris", "gaston", "figini"):
 		img = randomResponse("https://i.imgflip.com/36xhiz.jpg", "https://i.imgflip.com/36xhnh.jpg", "https://i.imgflip.com/36xi4x.jpg")
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
 		match = true
@@ -225,9 +226,9 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 
 
 	case stringMatch(msg.Text, "corvetto"):
-		img = randomResponse("https://i.imgflip.com/36xiin.jpg", "https://i.imgflip.com/36xijv.jpg", "https://i.imgflip.com/36xib4.jpg")
+		img = randomResponse("https://i.imgflip.com/36xiin.jpg", "https://i.imgflip.com/36xijv.jpg")
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
-		match = true
+		match = truerima
 
 	case stringMatch(msg.Text, "rima no anda"):
 		img = randomResponse("https://cdn.memegenerator.es/imagenes/memes/full/29/60/29604004.jpg", "https://i.imgflip.com/36xj39.jpg", "https://viapais.cdncimeco.com/media/cache/resolve/medium/https://viapais.com.ar/files/2018/08/20180815121424_33926253_0_body.jpg")
@@ -236,6 +237,33 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 
 	case stringMatch(msg.Text, "topo"):
 		img = randomResponse("https://i.imgflip.com/36xj7t.jpg", "http://www.buenamusica.com/media/fotos/cantantes/biografia/topo-gigio.jpg", "https://i.imgflip.com/36xjes.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+	case stringMatch(msg.Text, "river", "boca", "escritorio"):
+		img = randomResponse("https://i.imgflip.com/36xmiz.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+
+	case stringMatch(msg.Text, "juanfra", "camps", "gordo boris", "jota", "investigacion", "desarrollo", "luqui", "cami"):
+		img = randomResponse("https://k31.kn3.net/taringa/2/3/6/6/6/9/01/lizbelle/ECD.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+	case stringMatch(msg.Text, "candela", "la moto"):
+		img = randomResponse("https://www.nexofin.com/archivos/2017/02/715x402_4e6fe192ecluis_chipi_fernandez_candela.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+	case stringMatch(msg.Text, "central", "newells", "ñuls"):
+		img = randomResponse("https://1.bp.blogspot.com/-Np04aEaMfF4/XLleew5co6I/AAAAAAAAEHE/Zymh6TFOwOgBjF3Up6id271jsU5Yen_lACLcBGAs/s1600/Te-la-tomaste-toda-chinguenguencha-meme.jpg", "https://i.ytimg.com/vi/j1ss3PrOohM/maxresdefault.jpg",
+		"https://pbs.twimg.com/profile_images/1151074489838579716/2TWpvQG_.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+	case stringMatch(msg.Text, "comercial", "titi", "cuchi"):
+		img = randomResponse("https://i.imgflip.com/36xnmd.jpg", "https://i.imgflip.com/36xnox.jpg", "minion")
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
 		match = true
 	}
