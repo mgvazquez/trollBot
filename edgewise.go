@@ -277,7 +277,7 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
 		match = true
 
-	case stringMatch(msg.Text, "juanfra", "ganador", "winnner", "harem"):
+	case stringMatch(msg.Text, "juanfra", "ganador", "winner", "harem"):
 		img = randomResponse("https://i.imgflip.com/37e21c.jpg")
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
 		match = true
@@ -288,6 +288,16 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		match = true
 		rta = "<@" + msg.User + ">  No pises mi login!!!!"
 
+	case stringMatch(msg.Text, "borracho"):
+		img = randomResponse("https://i.imgflip.com/37e5i5.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+
+	case stringMatch(msg.Text, "currá", "curra", "gaby"):
+		img = randomResponse("https://i.imgflip.com/37e5lw.jpg")
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: img})
+		match = true
+		rta = "<@" + msg.User + ">  Que mirás???"
 
 	}
 
