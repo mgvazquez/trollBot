@@ -326,10 +326,13 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		answers = append(answers, rta)
 
 	}
-
-	var finalImg = imgs[rand.Intn(len(imgs))]
-	params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: finalImg})
-	rta = answers[rand.Intn(len(answers))]
+	if len(imgs) != 0{
+		finalImg := imgs[rand.Intn(len(imgs))]
+		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: finalImg})
+	}
+	if len(answers) != 0{
+		rta = answers[rand.Intn(len(answers))]
+	}
 	if match {
 		log.Printf("[DEBUG] theBotSay: %v - %v\n", rta, finalImg)
 		//rtm.SendMessage(rtm.NewOutgoingMessage(rta, msg.Channel))
