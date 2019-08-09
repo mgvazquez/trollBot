@@ -334,7 +334,7 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		rta = answers[rand.Intn(len(answers))]
 	}
 	if match {
-		log.Printf("[DEBUG] theBotSay: %v - %v\n", rta, finalImg)
+		log.Printf("[DEBUG] theBotSay: %v - %v\n", rta, img)
 		//rtm.SendMessage(rtm.NewOutgoingMessage(rta, msg.Channel))
 		rtm.PostMessage(msg.Channel, rta, params)
 	}
