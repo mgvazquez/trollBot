@@ -327,7 +327,7 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		answers = append(answers, rta)
 	}
 
-	if stringMatch(msg.Text, "poc", "p.o.c.") {
+	if stringMatch(msg.Text, "macri", "gato", "mauricio") {
 		rta = randomResponse(
 			"Satisface a Mauricio, no te relajes! Te elijo! Caricia significativa proveniente de Hurlingham!",
 			":cat:", ":cat2:", ":joy_cat:", ":smile_cat:", ":smirk_cat:", ":crying_cat_face:")
