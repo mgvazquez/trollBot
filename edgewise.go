@@ -335,6 +335,12 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		match = true
 	}
 
+	if stringMatch(msg.Text, "pablito", "vilardo", "vilarden", "radioactivo") {
+		img = randomResponse("https://pbs.twimg.com/media/Dfc86luWAAATcwS.jpg", "https://www.youtube.com/watch?v=ktvTqknDobU")
+		imgs = append(imgs, img)
+		match = true
+	}
+
 	if len(imgs) != 0{
 		finalImg := imgs[rand.Intn(len(imgs))]
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: finalImg})
