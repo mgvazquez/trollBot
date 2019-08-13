@@ -341,6 +341,14 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		match = true
 	}
 
+	if stringMatch(msg.Text, "no lo voy a hacer", "ni en pedo") {
+		img = randomResponse("https://i.ytimg.com/vi/6pscA6pHdPs/hqdefault.jpg")
+		imgs = append(imgs, img)
+		rta = "<@" + msg.User + ">  , hazlo por mi, por maginer!"
+		answers = append(answers, rta)
+		match = true
+	}
+
 	if len(imgs) != 0{
 		finalImg := imgs[rand.Intn(len(imgs))]
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: finalImg})
