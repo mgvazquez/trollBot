@@ -349,6 +349,16 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 		match = true
 	}
 
+	if stringMatch(msg.Text, "droga") {
+		img = randomResponse("https://cuartopodersalta.com.ar/wp-content/uploads/2016/06/lisa.jpg")
+		imgs = append(imgs, img)
+		rta = "Dame las drogas <@" + msg.User + ">"
+		answers = append(answers, rta)
+		match = true
+	}
+
+
+
 	if len(imgs) != 0{
 		finalImg := imgs[rand.Intn(len(imgs))]
 		params.Attachments = append(params.Attachments, slack.Attachment{ImageURL: finalImg})
