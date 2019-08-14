@@ -102,61 +102,61 @@ func edgewise(rtm *slack.RTM, msg *slack.MessageEvent) {
 			":kuaker:, alguien dijo PROXY?!?! :trollface:")
 		answers = append(answers, rta)
 		match = true
-
-		if stringMatch(msg.Text, "java") {
-			img = randomResponse(
-				"https://scontent-eze1-1.xx.fbcdn.net/v/t1.0-9/17103571_258039787985510_4543998202758018301_n.jpg?_nc_cat=0&oh=8f6bcf31d076e8025c7651cae16c5ea0&oe=5BEED0DA",
-				"https://scontent-eze1-1.xx.fbcdn.net/v/t1.0-9/16711881_249105438878945_4294265477870217883_n.jpg?_nc_cat=0&oh=84eff3784bebffeff4c1e4dc03d93127&oe=5C34C56B",
-				"https://scontent-eze1-1.xx.fbcdn.net/v/t1.0-9/17191448_259605207828968_1304022088973812803_n.jpg?_nc_cat=0&oh=f722acd747ecd7ff2eb6f1cb67c00161&oe=5C39F704")
-			match = true
-		}
-		if stringMatch(msg.Text, "lino") {
-			img = randomResponse(
-				"https://i.imgflip.com/2w167o.jpg")
-			imgs = append(imgs, img)
-			match = true
-		}
-		if stringMatch(msg.Text, "ivan") {
-			rta = randomResponse(
-				":quicuza: Que cùza?!?",
-				":quicuza:",
-				":quicuza:"+" <@"+msg.User+">, "+"que cùza?!?")
-			answers = append(answers, rta)
-			match = true
-		}
-		if stringMatch(msg.Text, "alan", "lamer", "lengua", "bach") {
-			img = randomResponse("https://i.imgflip.com/36uycu.jpg")
-			imgs = append(imgs, img)
-			match = true
-		}
-		if stringMatch(msg.Text, "coca", "cambios", "ptp", "mentos") {
-			img = randomResponse("https://i.imgflip.com/36uyef.jpg")
-			imgs = append(imgs, img)
-			match = true
-		}
-		if stringMatch(msg.Text, "juani", "cheto", "kansas", "sushi") {
-			img = randomResponse("https://i.imgflip.com/36uyuw.jpg",
-				"https://i.imgflip.com/36uyuw.jpg")
-			imgs = append(imgs, img)
-			match = true
-		}
-		if stringMatch(msg.Text, "marce", "bitcoin", "crypto") {
-			img = randomResponse("https://i.imgflip.com/36uymy.jpg",
-				"https://i.imgflip.com/36uymy.jpg")
-			imgs = append(imgs, img)
-			match = true
-		}
-		if stringMatch(msg.Text, "franchute", "frances") {
-			img = randomResponse("https://i.imgflip.com/36epmk.jpg")
-			imgs = append(imgs, img)
-			match = true
-		}
-		if stringMatch(msg.Text, "negro", "kevin", "brian", "jenny", "kirchner", "cfk", "cristina", "cristi", "feminazi", "todes") {
-		}
+	}
+	if stringMatch(msg.Text, "java") {
+		img = randomResponse(
+			"https://scontent-eze1-1.xx.fbcdn.net/v/t1.0-9/17103571_258039787985510_4543998202758018301_n.jpg?_nc_cat=0&oh=8f6bcf31d076e8025c7651cae16c5ea0&oe=5BEED0DA",
+			"https://scontent-eze1-1.xx.fbcdn.net/v/t1.0-9/16711881_249105438878945_4294265477870217883_n.jpg?_nc_cat=0&oh=84eff3784bebffeff4c1e4dc03d93127&oe=5C34C56B",
+			"https://scontent-eze1-1.xx.fbcdn.net/v/t1.0-9/17191448_259605207828968_1304022088973812803_n.jpg?_nc_cat=0&oh=f722acd747ecd7ff2eb6f1cb67c00161&oe=5C39F704")
+		match = true
+	}
+	if stringMatch(msg.Text, "lino") {
+		img = randomResponse(
+			"https://i.imgflip.com/2w167o.jpg")
+		imgs = append(imgs, img)
+		match = true
+	}
+	if stringMatch(msg.Text, "ivan") {
+		rta = randomResponse(
+			":quicuza: Que cùza?!?",
+			":quicuza:",
+			":quicuza:"+" <@"+msg.User+">, "+"que cùza?!?")
+		answers = append(answers, rta)
+		match = true
+	}
+	if stringMatch(msg.Text, "alan", "lamer", "lengua", "bach") {
+		img = randomResponse("https://i.imgflip.com/36uycu.jpg")
+		imgs = append(imgs, img)
+		match = true
+	}
+	if stringMatch(msg.Text, "coca", "cambios", "ptp", "mentos") {
+		img = randomResponse("https://i.imgflip.com/36uyef.jpg")
+		imgs = append(imgs, img)
+		match = true
+	}
+	if stringMatch(msg.Text, "juani", "cheto", "kansas", "sushi") {
+		img = randomResponse("https://i.imgflip.com/36uyuw.jpg",
+			"https://i.imgflip.com/36uyuw.jpg")
+		imgs = append(imgs, img)
+		match = true
+	}
+	if stringMatch(msg.Text, "marce", "bitcoin", "crypto") {
+		img = randomResponse("https://i.imgflip.com/36uymy.jpg",
+			"https://i.imgflip.com/36uymy.jpg")
+		imgs = append(imgs, img)
+		match = true
+	}
+	if stringMatch(msg.Text, "franchute", "frances") {
+		img = randomResponse("https://i.imgflip.com/36epmk.jpg")
+		imgs = append(imgs, img)
+		match = true
+	}
+	if stringMatch(msg.Text, "negro", "kevin", "brian", "jenny", "kirchner", "cfk", "cristina", "cristi", "feminazi", "todes") {
 		img = randomResponse("https://i.imgflip.com/36uz6w.jpg", "https://i.imgflip.com/37dzrf.jpg")
 		imgs = append(imgs, img)
 		match = true
 	}
+
 	if stringMatch(msg.Text, "css", "style-sheet") {
 		img = randomResponse(
 			"https://i.imgur.com/Q3cUg29.gif",
